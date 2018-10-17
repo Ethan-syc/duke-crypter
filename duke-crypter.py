@@ -17,7 +17,7 @@ if len(sys.argv) == 1:
     parser.print_help()
     exit(1)
 if args.e is not None:
-    password = input("enter your private key: ").encode('utf-8')
+    password = input("enter your password: ").encode('utf-8')
     backend = default_backend()
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
@@ -44,7 +44,7 @@ if args.e is not None:
 if args.d is not None:
     try:
         file_need_decrypt = open(args.d[0], "rb")
-        password = input("enter your private key: ").encode('utf-8')
+        password = input("enter your password: ").encode('utf-8')
         backend = default_backend()
         kdf = PBKDF2HMAC(
             algorithm=hashes.SHA256(),
